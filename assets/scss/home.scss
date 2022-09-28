@@ -6,55 +6,92 @@ body {
     display: flex;
     & > header {
         position: fixed;
-        top: 0;
+        top:0;
         z-index: 100;
         height: 100px;
         width: 100%;
-        display: flex;
+        display:flex;
         justify-content: center;
         align-items: center;
-        background-color: #fff;
+        background: #fff;
         transition-duration: 0.5s;
         & > nav {
-            width: 70%;
-            > ul {
+            width: 60%;
+             > ul {
                 margin: 0;
                 display: flex;
                 > li {
                     list-style: none;
-                    margin-right: 20px;
+                    margin-right: 40px;
                     > a {
                         text-decoration: none;
                         color: #222;
                         font-weight: bold;
                     }
                 }
+             }
+        }
+
+        &.footer-link-a {
+            > nav > ul > li > a {
+                color: #fff;
             }
         }
-        
     }
 }
+
 button.disabled {
     background: none;
-    border: solid 0.5px rgba(36,36,36,0.8);
+    border : solid 0.5px rgba(36,36,36, 0.8);
 }
+
 button.disabled:hover {
-    background: rgba(36,36,36,0.8);
+    background: rgba(36,36,36,0.2);
 }
+
+.btn {
+    width: 200px;
+    line-height: 50px;
+    border-radius: 5px;
+    font-size: 1em;
+    border: none;
+    transition-duration: 0.5s;
+}
+
+.btn-primary{
+    background: rgb(20, 116, 212);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+        background: #000;
+    }
+}
+
+.btn-danger{
+    background: rgb(220, 32, 32);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+        background: rgb(247, 101, 101);
+    }
+}
+//composição - Monte o seu CSS como um lanche do Subway
+//<button class="btn btn-danger font-big disabled ">Cadastrar</button>
+
 button {
     width: 290px;
     height: 40px;
-    border: none;
+    border:none;
     text-transform: uppercase;
     color: #333;
-    background: linear-gradient(150deg, #FFE45C 0%, #FFC900 100%);
+    background: linear-gradient(150deg, #FFE45C 0%, #ffc900 100%);
     font-size: 0.8em;
     border-radius: 20px;
-
 }
-
 button:hover {
-    background: linear-gradient(150deg, #FFE978 0%, #FBD033 100%);
+    background: linear-gradient(150deg, #ffe978 0%, #fbd033 100%);
     box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.5);
     cursor: pointer;
 }
@@ -62,8 +99,7 @@ button:hover {
 .jss4 .jss6 {
     fill: hsla(0, 0%, 14%, 1);
 }
-
-.jss590 {
+.jss12 {
     width: auto;
     height: 24px;
 }
@@ -76,9 +112,9 @@ button:hover {
     background-position: center center;
     .destak {
         width: 40%;
-        height: 60vh;
+        height:60vh;
         position: absolute;
-        bottom: 5%;
+        bottom: 0;
         left: 15%;
         > h1 {
             font-size: 4em;
@@ -87,30 +123,28 @@ button:hover {
             margin-bottom: 5%;
             margin-top: 2%;
         }
-        
         h2, h3 {
             margin: 0;
         }
-
-        h2 {
+        h2{
             width: 80%;
             font-weight: 300;
             margin-bottom: 5%;
         }
-
         h3 {
             width: 90%;
             background: rgba(36,36,36,0.35);
-            color: #FFF;
+            color:  #fff;
             font-weight: normal;
             font-size: 0.8em;
             line-height: 3em;
             border-radius: 25px;
             padding: 0 2%;
             span {
+                //agora você é o elemento de bloco.
                 width: fit-content;
                 display: inline-block;
-                background: #006D8F;
+                background: #006d8f;
                 padding: 0 3%;
                 border-radius: 25px;
                 line-height: 1.6em;
@@ -118,9 +152,19 @@ button:hover {
         }
     }
 }
-@media (min-width: 992px) {
+// breakpoints, números que usamos para
+// definir em que momento muda o CSS 
+// dependendo da tela
+// smartphone - nenhuma....
+// smartphone - landscape - 576px
+// tablet - 768px
+// desktop - 992px - 1200 ou 1280px
+// desktop grande - 1400px - 1600 - 1920px
+
+// 768 e (992 ou 1280) são os mais usados
+@media (min-width:992px){
     .full-banner {
-        background: url("../images/c6bank/hero-bg.webp") no-repeat;
+        background: url("../images/c6bank/hero-bg-desktop.webp") no-repeat;
         background-size: cover;
     }
 }
